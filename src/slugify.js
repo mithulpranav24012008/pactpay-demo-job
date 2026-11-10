@@ -1,4 +1,9 @@
-// Task for the worker: implement slugify(text).
 export function slugify(text) {
-  throw new Error("not implemented");
+  return text
+    .toLowerCase()
+    .replace(/[^a-z0-9\s-]/g, "")
+    .trim()
+    .split(/\s+/)
+    .filter(Boolean)
+    .join("-");
 }
